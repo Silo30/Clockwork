@@ -1,0 +1,513 @@
+/* App.css */
+.app {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Garantir que o conteúdo ocupe toda a altura da tela */
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #1c1c1c;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.login-link {
+  color: #FFF;
+  background-color: #1c1c1c;
+  text-decoration: none;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px;
+  gap: 50px;
+  flex-wrap: wrap; /* Para que o layout se ajuste em telas pequenas */
+}
+
+.info-section {
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  padding: 50px; /* Aumentado o padding para dar mais altura ao bloco */
+  text-align: center;
+  width: 45%;
+  max-width: 480px;
+  margin-right: 30px;
+  /* Aumentei o padding para mais espaço interno, o que aumenta a altura */
+}
+.form-section {
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  width: 100%;
+  max-width: 480px; /* Limitar largura em telas grandes */
+  margin: 10px; }
+
+
+.info-section h2 {
+  margin-bottom: 15px; /* Aumentei a distância abaixo do título */
+  font-size: 1.8rem; /* Aumentei o tamanho da fonte do título */
+}
+
+.praf {
+  padding-top: 15px; /* Aumentei o padding do parágrafo */
+}
+
+.icon-container img {
+  width: 200px;
+  margin: 20px 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form input {
+  padding: 12px;
+  border-radius: 15px;
+  border: 1px solid #333;
+  background-color: #1c1c1c;
+  color: #fff;
+}
+
+form input::placeholder {
+  color: #fff;
+}
+
+/* Estilos para o botão de envio */
+.btn-submit {
+  background-color: #ff4c4c;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s; /* Suaviza a transição de cor e transformação */
+}
+
+/* Estilo do botão quando o mouse passa sobre ele */
+.btn-submit:hover {
+  background-color: #e04444; /* Muda a cor de fundo quando o botão é hoverizado */
+  transform: scale(1.05); /* Aumenta ligeiramente o tamanho do botão */
+}
+
+
+.social-login {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Estilos para os botões de login (Google e Facebook) */
+.btn-social {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s; /* Suaviza a transição de cor e transformação */
+}
+
+/* Estilo para o botão de Google */
+.btn-social.google {
+  background-color: #ff4c4c;
+}
+
+/* Estilo para o botão de Facebook */
+.btn-social.facebook {
+  background-color: #ff4c4c;
+}
+
+/* Efeito de hover para ambos os botões */
+.btn-social:hover {
+  background-color: #e04444; /* Muda a cor de fundo quando o mouse passa por cima */
+  transform: scale(1.05); /* Aumenta ligeiramente o botão */
+}
+
+/* Efeito de clique (active) para ambos os botões */
+.btn-social:active {
+  transform: scale(0.98); /* Diminui um pouco o botão ao clicar */
+}
+
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .info-section,
+  .form-section {
+    max-width: 100%; /* Garantir que ocupe toda a largura disponível */
+    padding: 20px;
+  }
+
+  main {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .icon-container img {
+    width: 150px;
+  }
+
+  .btn-submit,
+  .btn-social {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  .info-section h2,
+  .form-section h2 {
+    font-size: 1.3rem;
+  }
+
+  form input {
+    padding: 10px;
+  }
+
+  .btn-submit {
+    font-size: 1rem;
+  }
+}
+/* Dashboard Layout */
+.dashboard {
+  display: grid;
+  grid-template-columns: 250px 1fr 300px;
+  grid-gap: 10px;
+  height: 100vh;
+  background-color: #121212; /* Cor de fundo da página */
+  color: #ffffff; /* Texto branco */
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #1c1c1c; /* Fundo do menu lateral */
+  color: #c7c7c7; /* Texto em tom cinza claro */
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.sidebar .user-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.sidebar .user-info p {
+  margin: 5px 0;
+}
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar nav li {
+  margin-bottom: 15px;
+}
+.sidebar nav button {
+  width: 100%;
+  background-color: transparent;
+  color: #c7c7c7;
+  border: none;
+  text-align: left;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.sidebar nav button:hover {
+  background-color: #272727;
+  color: #ffffff;
+}
+.sidebar .logout-btn {
+  margin-top: auto;
+  background-color: #e53935;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Main Content */
+.task-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.task-content header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.task-content header h1 {
+  font-size: 24px;
+  margin: 0;
+}
+.task-content header input {
+  padding: 10px;
+  border: 1px solid #3c3c3c;
+  border-radius: 5px;
+  background-color: #1f1f1f;
+  color: #ffffff;
+}
+
+/* Task Overview Section */
+.tasks-overview {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.task {
+  background-color: #1f1f1f;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #c7c7c7;
+}
+.task img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.task p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+.task progress {
+  width: 100%;
+  appearance: none;
+  height: 8px;
+  background-color: #272727;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.task progress::-webkit-progress-bar {
+  background-color: #272727;
+}
+.task progress::-webkit-progress-value {
+  background-color: #42a5f5;
+}
+
+/* Calendar Section */
+.task-calendar {
+  margin-top: 20px;
+}
+.task-calendar h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  background-color: #1f1f1f;
+  padding: 15px;
+  border-radius: 10px;
+}
+.calendar div {
+  background-color: #2c2c2c;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+/* Right Panel */
+.task-details {
+  background-color: #1c1c1c;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.task-details h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.task-details p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+.task-details h3 {
+  font-size: 18px;
+  margin: 15px 0;
+  color: #42a5f5;
+}
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #272727;
+  border-radius: 5px;
+}
+.task-item button {
+  background-color: #42a5f5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.task-editor {
+  width: 100%;
+  background-color: #00796b;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+/* Página de Login */
+.login-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 100px); /* Altura total menos o header */
+}
+.login-page h1{
+  color: #fff;
+}
+
+.login-form {
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destaque */
+}
+
+
+.login-form h2 {
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  color: #fff;
+}
+.login-form p{
+  color: #fff;
+  margin-top: 3px;
+}
+
+.login-form input {
+  padding: 12px;
+  border-radius: 15px;
+  border: 1px solid #333;
+  background-color: #1c1c1c;
+  color: #fff;
+}
+
+.login-form input::placeholder {
+  color: #fff;
+}
+
+/* Botão de envio estilizado */
+.login-form .btn-submit {
+  background-color: #ff4c4c;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  margin-top: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.register-link{
+  color: #FFF;
+  background-color: #1c1c1c;
+  text-decoration: none;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  
+  transition: background-color 0.3s, transform 0.3s;
+
+}
+
+.login-form .btn-submit:hover {
+  background-color: #e04444;
+  transform: scale(1.05);
+}
+
+/* Botões de redes sociais */
+.social-login {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn-social {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-social.google {
+  background-color: #ff4c4c;
+}
+
+.btn-social.facebook {
+  background-color: #ff4c4c;
+}
+
+.btn-social:hover {
+  transform: scale(1.05);
+}
